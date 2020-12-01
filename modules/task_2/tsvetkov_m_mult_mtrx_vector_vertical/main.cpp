@@ -15,7 +15,6 @@ TEST(Parallel_Operations_MPI, Test_1) {
     int n = 1055;  // column
     if (rank == 0) {
         test = getRandomMatrix(n, m);
-       
         test2 = getRandomVector(m);
     }
     double time1 = MPI_Wtime();
@@ -30,8 +29,6 @@ TEST(Parallel_Operations_MPI, Test_1) {
         double time_res2 = time4 - time3;
         std::cout << "Parallel time :" << time_res2 << std::endl;
         std::cout << "Seq time :" << time_res1 << std::endl;
-        
-        
         ASSERT_EQ(res_p, res_s);
     }
 }
@@ -58,9 +55,7 @@ TEST(Parallel_Operations_MPI, Test_2) {
         double time4 = MPI_Wtime();
         double time_res2 = time4 - time3;
         std::cout << "Parallel time :" << time_res2 << std::endl;
-        std::cout << "Seq time :" << time_res1 << std::endl;
-
-
+        std::cout << "Seq time :" << time_res1 << std::end;
         ASSERT_EQ(res_p, res_s);
     }
 }
@@ -88,8 +83,6 @@ TEST(Parallel_Operations_MPI, Test_3) {
         double time_res2 = time4 - time3;
         std::cout << "Parallel time :" << time_res2 << std::endl;
         std::cout << "Seq time :" << time_res1 << std::endl;
-
-
         ASSERT_EQ(res_p, res_s);
     }
 }
@@ -117,8 +110,6 @@ TEST(Parallel_Operations_MPI, Test_4) {
         double time_res2 = time4 - time3;
         std::cout << "Parallel time :" << time_res2 << std::endl;
         std::cout << "Seq time :" << time_res1 << std::endl;
-
-
         ASSERT_EQ(res_p, res_s);
     }
 }
